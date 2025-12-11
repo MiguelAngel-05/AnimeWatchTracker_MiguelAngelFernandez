@@ -1,0 +1,63 @@
+<main class="hero">
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+      <h1 class="hero-title">Busca tu anime</h1>
+      <input 
+          type="text" 
+          class="buscar" 
+          [(ngModel)]="search" 
+          (input)="buscarAnime()" 
+          placeholder="Buscar anime..."
+      >
+  </div>
+
+</main>
+
+
+<h2 class="section-title">Animes de esta temporada</h2>
+
+<div class="anime-row">
+  @for (a of animesFiltrados; track a.mal_id) {
+    <a [routerLink]="['/anime', a.mal_id]" class="anime-item">
+        <div class="anime-image-wrapper">
+          <img [src]="a.images.jpg.image_url" [alt]="a.title">
+          <div class="anime-score-badge">⭐ {{ a.score ?? 'N/A' }}</div>
+        </div>
+        <p class="anime-title">{{ a.title }}</p>
+    </a>
+  }
+</div>
+
+<h2 class="section-title">Animes Top</h2>
+
+<div class="anime-row">
+  @for (a of animesFiltradosTop; track a.mal_id) {
+    <a [routerLink]="['/animeTop', a.mal_id]" class="anime-item">
+        <div class="anime-image-wrapper">
+          <img [src]="a.images.jpg.image_url" [alt]="a.title">
+          <div class="anime-score-badge">⭐ {{ a.score ?? 'N/A' }}</div>
+        </div>
+        <p class="anime-title">{{ a.title }}</p>
+    </a>
+  }
+</div>
+
+<h2 class="section-title">Próximos Animes</h2>
+
+<div class="anime-row">
+  @for (a of animesFiltradosProx; track a.mal_id) {
+    <a [routerLink]="['/animeProx', a.mal_id]" class="anime-item">
+        <div class="anime-image-wrapper">
+          <img [src]="a.images.jpg.image_url" [alt]="a.title">
+          <div class="anime-score-badge">⭐ {{ a.score ?? 'N/A' }}</div>
+        </div>
+        <p class="anime-title">{{ a.title }}</p>
+    </a>
+  }
+</div>
+
+@if (!animes?.length) {
+  <p class="cargar">Cargando animes...</p>
+}

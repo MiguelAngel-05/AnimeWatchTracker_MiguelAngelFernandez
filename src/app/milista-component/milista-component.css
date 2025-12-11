@@ -1,0 +1,164 @@
+.mi-lista {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(20, 30, 60, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  color: #eee;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.mi-lista h1 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  color: #fff;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
+}
+
+/* esto es para el filtro */
+.mi-lista .filtro-estado {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.mi-lista .filtro-estado:hover,
+.mi-lista .filtro-estado:focus {
+  background: rgba(97, 156, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(97, 156, 255, 0.35);
+}
+
+/* para cada 1 */
+.mi-lista .item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.11);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mi-lista .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(97, 156, 255, 0.4);
+}
+
+.mi-lista .item img {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mi-lista .item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(120, 180, 255, 0.45);
+}
+
+.mi-lista .item h3 {
+  flex: 1;
+  font-size: 18px;
+  color: #fff;
+  margin: 0 20px 0 0;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* esto es pa el estado */
+.mi-lista .item select {
+  padding: 8px 12px;
+  margin: 0 10px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.mi-lista .item select:hover,
+.mi-lista .item select:focus {
+  background: rgba(97, 156, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* esto son los botones */
+.mi-lista .item button {
+  padding: 8px 15px;
+  margin: 0 5px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.mi-lista .item button:first-of-type {
+  background: #ffb347; 
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 179, 71, 0.4);
+}
+
+.mi-lista .item button:first-of-type:hover {
+  background: #ffc870;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 179, 71, 0.6);
+}
+
+.mi-lista .item button:last-of-type {
+  background: #ff4c4c;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 76, 76, 0.4);
+}
+
+.mi-lista .item button:last-of-type:hover {
+  background: #ff6b6b;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 76, 76, 0.6);
+}
+
+@media (max-width: 700px) {
+  .mi-lista .item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mi-lista .item img {
+    margin: 0 0 15px 0;
+  }
+
+  .mi-lista .item h3 {
+    margin: 0 0 10px 0;
+  }
+
+  .mi-lista .item select,
+  .mi-lista .item button,
+  .mi-lista .filtro-estado {
+    margin: 5px 0;
+    width: 80%;
+  }
+}

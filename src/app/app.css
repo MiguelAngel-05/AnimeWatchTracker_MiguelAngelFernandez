@@ -1,0 +1,59 @@
+main, section, .page-wrapper {
+  padding-top: 95px;
+}
+
+.page {
+  margin-top: 95px;
+}
+
+/* esto es el header */
+.topbar {
+  width: 96%;
+  height: 85px;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+
+  z-index: 9999;
+  position: fixed;
+}
+
+/* para mi logo*/
+.logo img {
+  height: 180px;
+  object-fit: contain;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+  color: #d0d0d0;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #fff;
+}

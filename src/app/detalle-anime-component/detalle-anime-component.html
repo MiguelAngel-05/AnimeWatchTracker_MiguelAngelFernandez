@@ -1,0 +1,29 @@
+<div class="detalle-anime">
+  @if (anime) {
+
+    <img [src]="anime.images.jpg.large_image_url">
+
+    <h1>{{ anime.title }}</h1>
+
+    <p>{{ anime.synopsis }}</p>
+
+    <button (click)="agregar()">Añadir a mi lista</button>
+
+    <h2>Episodios</h2>
+    <div class="episodios">
+      @for (ep of episodios; track ep.mal_id) {
+        <p>{{ ep.mal_id }} - {{ ep.title }}</p>
+      }
+    </div>
+
+    <h2>Reseñas</h2>
+    <div class="resenas">
+      @for (rev of resenas; track rev.mal_id) {
+        <article>
+          <strong>{{ rev.user.username }}</strong>
+          <p>{{ rev.review }}</p>
+        </article>
+      }
+    </div>
+  }
+</div>

@@ -1,0 +1,110 @@
+.detalle-anime {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(20, 30, 60, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  color: #eee;
+  font-family: 'Arial', sans-serif;
+}
+
+/* esto es pa la imagen grande */
+.detalle-anime img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(97, 156, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detalle-anime img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(120, 180, 255, 0.5);
+}
+
+/* para el titulo */
+.detalle-anime h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
+}
+
+/* pa la sinopsis */
+.detalle-anime p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: justify;
+  color: #ddd;
+}
+
+/* esto es el boton de añadr */
+.detalle-anime button {
+  display: block;
+  margin: 0 auto 30px auto;
+  padding: 12px 25px;
+  font-size: 16px;
+  background: #617cff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(97, 156, 255, 0.4);
+}
+
+.detalle-anime button:hover {
+  background: #91b0ff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(97, 156, 255, 0.6);
+}
+
+.detalle-anime h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #aaccff;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+/* episodios  */
+.detalle-anime .episodios p {
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  transition: background 0.25s ease;
+  cursor: default;
+}
+
+.detalle-anime .episodios p:hover {
+  background: rgba(97, 156, 255, 0.15);
+}
+
+/* esto para las reseñas */
+.detalle-anime .resenas article {
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.detalle-anime .resenas article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(97, 156, 255, 0.35);
+}
+
+.detalle-anime .resenas strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+  font-size: 14px;
+}

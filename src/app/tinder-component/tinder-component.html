@@ -1,0 +1,30 @@
+<div class="tinder-container">
+  
+  @if (selectedAnime) {
+
+    <div class="anime-card">
+      <img [src]="selectedAnime.images.jpg.image_url" [alt]="selectedAnime.title">
+
+      <div class="anime-info">
+        <h2>{{ selectedAnime.title }}</h2>
+        <p class="anime-score">⭐ {{ selectedAnime.score ?? 'N/A' }}</p>
+        <p class="anime-synopsis">{{ selectedAnime.synopsis }}</p>
+      </div>
+
+      <div class="actions">
+        <button class="dislike" (click)="dislike()">❌</button>
+        <button class="like" (click)="like()">❤️</button>
+      </div>
+    </div>
+
+  } @else {
+
+    <p class="cargando">Cargando anime...</p>
+
+  }
+
+</div>
+<!-- con esto hago q mientras carga salga almenos algo -->
+<ng-template #loading>
+  <p class="cargando">Cargando anime...</p>
+</ng-template>

@@ -1,0 +1,41 @@
+
+<div class="buscar-content">
+  <h1>Buscar Animes</h1>
+
+  <input [(ngModel)]="nombre" placeholder="Nombre del anime">
+
+  <select [(ngModel)]="tipo">
+    <option value="">Tipo</option>
+    <option value="tv">TV</option>
+    <option value="movie">Movie</option>
+  </select>
+
+  <select [(ngModel)]="estado">
+    <option value="">Estado</option>
+    <option value="airing">En emisión</option>
+    <option value="complete">Completado</option>
+  </select>
+
+  <button (click)="buscar()">Buscar</button>
+
+  @if (cargando) {
+    <p>Cargando...</p>
+  }
+
+  @if (error) {
+    <p>Error al buscar animes.</p>
+  }
+
+  @if (!cargando && resultados.length === 0) {
+    <p>No hay resultados.</p>
+  }
+
+  <div class="grid">
+    @for (anime of resultados; track anime.mal_id) {
+      <div class="card" (click)="verDetalle(anime.mal_id)">
+        <img [src]="anime.images.jpg.image_url">
+        <h3>{{ anime.title }}</h3>
+      </div>
+    }
+  </div>
+</div>
